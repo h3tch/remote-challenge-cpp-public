@@ -57,3 +57,14 @@ clean:
 
 -include $(OBJECTS_REL:.o=.d)
 -include $(OBJECTS_DBG:.o=.d)
+
+test:
+	@for input_file in $(shell ls input/*.json); do \
+		output_file=$${input_file##*/}; \
+		echo "$${input_file} -> $${output_file}"; \
+		bin/challenge-release $${input_file} output/$${output_file}; \
+	done
+	@for file in $(shell ls output/*.json); do \
+		echo "Visualize $${file}"; \
+		python3 mini_viz.py $${file}; \
+	done

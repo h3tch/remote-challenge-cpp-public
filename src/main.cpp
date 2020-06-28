@@ -17,7 +17,7 @@ int main(int argc, char** argv) {
 
 	std::vector<chal::Point> input_polygon = chal::read_polygon_from_json(input_file);
 
-	std::vector<chal::Point> result_polygon = chal::do_the_challenge_thing(input_polygon);
+	std::vector<chal::Point> result_polygon = chal::x_monotone_from_polygon(input_polygon);
 
 	chal::write_point_vector_to_json(result_polygon, output_file);
 }

@@ -6,10 +6,7 @@
 
 namespace chal {
 
-	inline auto do_the_challenge_thing(const std::vector<Point>& input_polygon)
-		-> std::vector<Point>
-	{
-		//implement your solution here
-		return input_polygon;
-	}
+	auto x_monotone_from_polygon(const std::vector<Point>& points)
+		-> std::vector<Point>;
+
 } //namespace chal
